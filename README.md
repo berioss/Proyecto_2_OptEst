@@ -13,7 +13,7 @@ Incluye utilidades para **graficar riqueza** por ε (y benchmark constante) y un
 ## Requisitos
 
 - Python 3.10+ (recomendado 3.11)
-- 
+
 ## 🔧 Librerías usadas (Python)
 
 | Librería       | Uso principal |
