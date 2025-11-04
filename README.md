@@ -10,30 +10,26 @@ Incluye utilidades para **graficar riqueza** por ε (y benchmark constante) y un
 
 ---
 
-## Contenidos
-
-- `notebooks/Practica2-OptSth-Rios-Brahyan.ipynb`  
-  Notebook principal del trabajo (análisis, corridas y figuras).
-- `src/dro_solvers.py`  
-  Implementaciones **cvxpy** de DRO W₁/W₂ y runner rolling.
-- `src/plots.py`  
-  Funciones para graficar riqueza por ε, comparación p=1 vs p=2, y benchmark constante.
-- `reports/informe_opt_estocastica.tex`  
-  Plantilla LaTeX del informe (lista para compilar).
-- `figures/`  
-  Carpeta sugerida para exportar las figuras (`wealth_w1_constante.png`, etc.).
-- `data/`  
-  (Opcional) Datos procesados o CSVs de métricas.
-- `requirements.txt`  
-  Dependencias mínimas del proyecto.
-
-> **Nota:** Si solo usarás el notebook, bastará con tener instaladas las dependencias de `requirements.txt`.
-
----
-
 ## Requisitos
 
 - Python 3.10+ (recomendado 3.11)
-- Dependencias:
-  ```bash
-  pip install -r requirements.txt
+- 
+## 🔧 Librerías usadas (Python)
+
+| Librería       | Uso principal |
+|----------------|---------------|
+| **numpy**      | álgebra y manejo de matrices de retornos |
+| **pandas**     | ETL de series de tiempo y tablas de métricas |
+| **matplotlib** | gráficos de riqueza/curvas comparativas |
+| **tqdm**       | barras de progreso en corridas rolling |
+| **cvxpy**      | modelado convex y resolución de DRO (W₁/W₂) |
+| **scs**        | solver para `cvxpy` (fallback robusto) |
+| **ecos**       | solver para `cvxpy` (rápido en SOCP) |
+| **yfinance**   | descarga de precios históricos (opcional) |
+| **jupyter**    | ejecución del notebook |
+| **nbconvert**  | exportar `.ipynb` a HTML/PDF |
+| **nbconvert[webpdf]** | exportar a PDF vía navegador (sin LaTeX) |
+| **pyppeteer**  | motor headless para `webpdf` |
+
+> **Nota:** Si vienes de una versión previa con Gurobi, aquí **no es necesario**. Todo el flujo usa **cvxpy** con **SCS/ECOS**.
+
